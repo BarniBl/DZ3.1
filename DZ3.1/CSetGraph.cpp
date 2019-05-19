@@ -6,8 +6,9 @@ CSetGraph::CSetGraph(int count) {
 }
 
 CSetGraph::CSetGraph(const IGraph& graph) {
+	adjacencyHashTables.resize(graph.VerticesCount());
 	for (int i = 0; i < graph.VerticesCount(); ++i) {
-		for (int j = 0; j < graph.GetNextVertices(i).size(); i++) {
+		for (int j = 0; j < graph.GetNextVertices(i).size(); j++) {
 			adjacencyHashTables[i].insert(graph.GetNextVertices(i)[j]);
 		}
 	}

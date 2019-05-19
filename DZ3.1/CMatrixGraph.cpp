@@ -9,8 +9,10 @@ CMatrixGraph::CMatrixGraph(int count) {
 }
 
 CMatrixGraph::CMatrixGraph(const IGraph& graph) {
+	adjacencyMatrix.resize(graph.VerticesCount());
 	for (int i = 0; i < graph.VerticesCount(); ++i) {
-		for (int j = 0; j < graph.GetNextVertices(i).size(); i++) {
+		adjacencyMatrix[i].resize(graph.VerticesCount(), 0);
+		for (int j = 0; j < graph.GetNextVertices(i).size(); j++) {
 			adjacencyMatrix[i][graph.GetNextVertices(i)[j]] = 1;
 		}
 	}
