@@ -12,6 +12,7 @@ public:
 	virtual std::vector<int> GetNextVertices(int vertex) const override;
 	virtual std::vector<int> GetPrevVertices(int vertex) const override;
 
+	virtual int GetWeight(int start, int end) const override;
 private:
 	std::vector<std::vector<int>> adjacencyMatrix;
 };

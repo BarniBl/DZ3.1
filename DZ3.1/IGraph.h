@@ -1,6 +1,6 @@
 #pragma once
 #include "pch.h"
-class IGraph{
+class IGraph {
 public:
 	virtual ~IGraph() {}
 
@@ -11,4 +11,6 @@ public:
 
 	virtual std::vector<int> GetNextVertices(int vertex) const = 0;
 	virtual std::vector<int> GetPrevVertices(int vertex) const = 0;
+
+	virtual int GetWeight(int start, int end) const = 0;
 };

@@ -31,7 +31,7 @@ int CMatrixGraph::VerticesCount() const {
 std::vector<int> CMatrixGraph::GetNextVertices(int vertex) const {
 	std::vector<int> next;
 	for (int i = 0; i < adjacencyMatrix[vertex].size(); ++i) {
-		if (adjacencyMatrix[vertex][i] !=0)
+		if (adjacencyMatrix[vertex][i] != 0)
 			next.push_back(i);
 	}
 	return next;
@@ -44,5 +44,13 @@ std::vector<int> CMatrixGraph::GetPrevVertices(int vertex) const {
 			prev.push_back(i);
 	}
 	return prev;
+}
+
+
+int CMatrixGraph::GetWeight(int start, int end) const {
+	if (start >= 0 && start < VerticesCount() && end >= start && end < VerticesCount())
+		return adjacencyMatrix[start][end];
+	else
+		return -1;
 }
 
